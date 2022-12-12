@@ -13,4 +13,20 @@ public class CartService {
         this.carts = carts;
     }
 
+    public  int getCartNumber(){
+        return carts.size();
+    }
+
+    public long getGoodsNumberInCart(int id) {
+        return getCartById(id).countItemsInCart();
+    }
+
+    private Cart getCartById(int id ) {
+        return carts.stream()
+                .filter(i -> i.getId() == id)
+                .findAny()
+                .get();
+    }
+
+
 }

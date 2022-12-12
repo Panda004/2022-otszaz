@@ -26,5 +26,10 @@ public class Cart {
     public int getTotalValue() {
         return totalValue;
     }
+    public long countItemsInCart() {
+        return goods.values().stream()
+                .mapToLong(i -> i)
+                .sum();
+    }
 
 }

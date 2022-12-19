@@ -32,4 +32,18 @@ public class Cart {
                 .sum();
     }
 
+    public boolean contains(String item){
+        return goods.containsKey(item);
+    }
+
+    public String getCartDetails(){
+        return goods.entrySet().stream()
+                .map(i -> i.getValue() + " " + i.getKey())
+                .collect(Collectors.joining("\n"));
+    }
+
+    @Override
+    public String toString() {
+        return id + ": " + totalValue;
+    }
 }

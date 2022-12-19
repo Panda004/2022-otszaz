@@ -35,7 +35,7 @@ public class DataParser {
     private int calculateTotalValue(Map<String, Long> goodsMap) {
         return goodsMap.values().stream()
                 .mapToInt(Long::intValue)
-                .map(i -> i * 500)
+                .map(ValueCalculator::value)
                 .sum();
     }
 

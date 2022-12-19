@@ -23,6 +23,8 @@ public class App {
     }
 
     private void run() {
+        System.out.println("1. feladat");
+        System.out.println(" A beolvasás megtörtént");
         System.out.println("2. feladat");
         System.out.println(" A fizetések száma: " + cartService.getCartNumber());
         System.out.println("3. feladat");
@@ -34,6 +36,15 @@ public class App {
         String item = console.read();
         System.out.print("Adja meg a vásárló darabszámát! ");
         int count = console.readInt();
+        System.out.println("5.feladat");
+        System.out.println(cartService.getCartStatisticByGoods(item));
+        System.out.println("6. feladat");
+        System.out.println(cartService.getValueByCount(count));
+        System.out.println("7. feladat");
+        System.out.println(cartService.getCartContentInDetailsById(id));
+        System.out.println("8. feladat");
+        System.out.println("A kiirás megtörtént");
+        dataWriter.printAll(cartService.getTotalValue());
 
     }
 
